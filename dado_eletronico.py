@@ -1,10 +1,11 @@
-import RPi.GPIO as GPIO, time, random
+import RPi.GPIO as GPIO, random
 
-
+#Dice layout
 #1   2   3
 #    7    
 #4   5   6
 
+#Led to PIN mappings
 LED1=8
 LED2=25
 LED3=18
@@ -19,7 +20,7 @@ def botao_pressionado(channel):
     apagar_todos_leds()
     numero_sorteado = random.randint(1,6) 
     exibir_numero(numero_sorteado)
-    print "Numero sorteado "+str(numero_sorteado)
+    print ("Numero sorteado "+str(numero_sorteado))
 
 def apagar_todos_leds() :
     GPIO.output(LED1, False)
@@ -78,7 +79,6 @@ def exibir_numero(numero) :
         ligar_led(LED4)
         ligar_led(LED5)
         ligar_led(LED6)
-
 
 
 inicializar()
